@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test_Database</title>
+</head>
+<body>
+<!--the select part, through syntax 'form' to construct CGI-->
+<form action="/cgi-bin/Data/tdb_select.pl" method="post" target="_blank">
+    <h2>SELECT THE DATA</h2>
+     table name:
+    <select name="select">
+        <option value="serve">serve</option>
+        <option value="storage">storage</option>
+    </select><br/>
+    <input type="submit" value="SELECT"/>
+    <br/><br/>
+</form>
+<!--the insert part, through syntax 'form' to construct CGI-->
+<form action="/cgi-bin/Data/tdb_insert.pl" method="post" target="_blank">
+    <h2>INSERT THE DATA</h2>
+    choose a table:<select name="table">
+        <option value="serve">serve</option>
+        <option value="storage">storage</option>
+    </select><br/>
+    values:
+    <br/>
+    <textarea name="value" cols="35" rows="4"></textarea>
+    <br/>
+    <input type="submit" value="INSERT"/>
+    <br/><br/>
+</form>
+<!--the delete part,through syntax 'form' to construct CGI-->
+<form action="/cgi-bin/Data/tdb_delete.pl" method="post" target="_blank">
+    <h2>DELETE THE DATA</h2>
+    choose a table:<select name="table1">
+        <option value="serve">serve</option>
+        <option value="storage">storage</option>
+    </select><br/>
+    the conditions:
+    <br/>
+    <textarea name="condition" cols="35" rows="4">WHERE...</textarea>
+    <br/>
+    <input type="submit" value="DELETE"/>
+    <br/><br/>
+</form>
+<!--the update part,through syntax 'form' to construct CGI-->
+<form action="cgi-bin/Data/tdb_update.pl" method="post" target="_blank">
+    <h2>UPDATE THE DATA</h2>
+    choose a table:
+    <select name="table2">
+        <option value="serve">serve</option>
+        <option value="storage">storage</option>
+    </select>
+    <br/>
+    SET columns:<br/>
+    <textarea name="column2" cols="35" rows="4">SET...</textarea>
+    <br/><br/>
+    Condition:
+    <br/>
+    <textarea name="condition2" cols="35" rows="4">WHERE...</textarea>
+    <br/>
+    <input type="submit" value="UPDATE"/>
+    <br/><br/>
+</form>
+<!--the inner join part,through syntax 'form' to construct CGI-->
+<form action="cgi-bin/Data/tdb_innerjoin.pl" method="post" target="_blank">
+    <h2>INNER JOIN the TWO tables</h2>
+    Table1:
+    <select name="table3">
+        <option value="serve">serve</option>
+        <option value="storage">storage</option>
+    </select>
+    <br/>
+    Table2:
+    <select name="table4">
+        <option value="serve">serve</option>
+        <option value="storage">storage</option>
+    </select>
+    <br/>
+    Choose columns:<br/>
+    <textarea name="column3" cols="46" rows="6">e.g.Table1.column1,Table2.column2...</textarea>
+    <br/>
+    <br/>
+    Common field:
+    <br/>
+    <textarea name="column4" cols="46" rows="6">e.g.Table1.column1=Table2.column2...</textarea>
+    <br/>
+    <input type="submit" value="INNERJOIN"/>
+    <br/><br/>
+</form>
+</body>
+</html>
