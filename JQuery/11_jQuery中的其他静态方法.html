@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>11_jQuery中的其他静态方法</title>
+	<script type="text/javascript" src="../JScontent/js/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+	/*
+		$.trim();
+		作用：去除字符串两端的空格
+		参数：需要去除空格的字符串
+		返回值：去除空格之后的字符串
+	*/
+		/* var str = "    ldd    ";
+		var res = $.trim(str);
+		console.log("----"+str+"----");
+		console.log("----"+res+"----"); */
+		
+		// tips: 返回值为true/false, isWindow()判断是否是window对象 isArray()判断是否是真数组
+		var arr = [1,3,5,7,9];
+		var arrLike = {0:1,1:3,2:5,3:7,4:9};
+		var obj = {"name":"hello","age":34};
+		var fn = function(){};
+		var w = window;
+		var res = $.isWindow(w);
+		var res1 = $.isArray(w);
+		var res2 = $.isFunction(jQuery);
+		console.log(res2);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

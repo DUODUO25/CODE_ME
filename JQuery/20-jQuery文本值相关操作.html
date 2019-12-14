@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>20-jQuery文本值相关操作</title>
+	<script src="../JScontent/js/jquery-3.4.1.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin:0px;
+		}
+		
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var btns = document.getElementsByTagName("button");
+			btns[0].onclick = function(){
+				$("div").html("<p>我是段落<span>我是span</span></p>");
+			};
+			btns[1].onclick = function(){
+				console.log($("div").html());
+			};
+			btns[2].onclick = function(){
+				$("div").text("<p>我是段落<span>我是span</span></p>");
+			};
+			btns[3].onclick = function(){
+				console.log($("div").text());
+			};
+			
+			// val()可以给input设置value,并且获取value,
+			btns[4].onclick = function(){
+				$("input").val("hhh")
+			};
+			btns[5].onclick = function(){
+				console.log($("input").val());
+			};
+		});
+	</script>
+</head>
+<body>
+	<button>设置html</button>
+	<button>获取html</button>
+	<button>设置text</button>
+	<button>获取text</button>
+	<button>设置value</button>
+	<button>获取value</button>
+	<div></div>
+	<input type="text"/>
+</body>
+</html>

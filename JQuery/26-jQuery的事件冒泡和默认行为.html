@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>26-jQuery的事件冒泡和默认行为.</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.father{
+			width:200px;
+			height:200px;
+			background: red;
+		}
+		.son{
+			width:100px;
+			height:100px;
+			background:blue;
+		}
+	</style>
+	<script type="text/javascript" src="../JScontent/js/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".son").click(function(event){
+				alert("son");
+				//return false; // tips: 阻止事件冒泡 方式一， 在子中return false
+				event.stopPropagation();// tips: 阻止事件冒泡 方式二， 在子中调用方法event.stopPropagation();
+			});
+			$(".father").click(function(){
+				alert("father");
+			});
+			$("a").click(function(event){
+				alert("ttt");
+				// return false; // tips: 方式一， 阻止a标签的默认跳转页面的行为，return false即可
+				event.preventDefault(); // tips: 方式二， 阻止a标签的默认跳转页面的行为，event.preventDefault();即可
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<a href="http://www.baidu.com">我是百度</a>
+	<form action="http://www.taobao.com">
+		<input type="text"/>
+		<input type="submit"/>
+	</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>41-jQuery展开和收起动画</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	div{
+		width:100px;
+		height:500px;
+		background:red;
+		display:none;
+	}
+</style>
+<script type="text/javascript" src="../JScontent/js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").eq(0).click(function(){
+			$("div").slideDown(1000,function(){alert("hello world!")});
+		});
+		$("button").eq(1).click(function(){
+			$("div").slideUp(1000,function(){alert("sunny!")});
+		});
+		$("button").eq(2).click(function(){
+			$("div").slideToggle(1000,function(){
+				alert("great!");
+			})
+		});
+	});
+</script>
+</head>
+<body>
+	<button>展开</button>
+	<button>收起</button>
+	<button>切换</button>
+	<div></div>
+</body>
+</html>

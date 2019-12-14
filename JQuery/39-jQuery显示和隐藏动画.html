@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>39-jQuery显示和隐藏动画</title>
+<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	div{
+		width:200px;
+		height:200px;
+		background:red;
+		display:none;
+	}
+</style>
+<script src="../JScontent/js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").eq(0).click(function(){
+			//$("div").css("display","block");
+			$("div").show(1000,function(){
+				// tips:动画执行完毕后调用
+				alert("beautiful!");
+			});
+		});
+		$("button").eq(1).click(function(){
+			//$("div").css("display","none");
+			$("div").hide(1000,function(){
+				// tips:动画执行完毕后调用
+				alert("wonderful!");
+			});
+		});
+		$("button").eq(2).click(function(){
+			$("div").toggle(1000);
+		});
+	});
+</script>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+	<div></div>
+</body>
+</html>

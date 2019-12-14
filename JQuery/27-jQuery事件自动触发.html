@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>27-jQuery事件自动触发</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.father{
+			width:200px;
+			height:200px;
+			background: red;
+		}
+		.son{
+			width:100px;
+			height:100px;
+			background:blue;
+		}
+	</style>
+	<script type="text/javascript" src="../JScontent/js/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".son").click(function(event){
+				alert("son");
+			});
+			$(".father").click(function(){
+				alert("father");
+			});
+			/* $("a").click(function(event){
+				alert("ttt");
+			}); */
+			
+			//$(".son").trigger("click");// tips:使用trigger()自动触发事件，会触发事件冒泡
+			//$(".son").triggerHandler("click");// tips:使用triggerHandler()自动触发事件，不会触发事件冒泡
+			$("input[type='submit']").click(function(){
+				alert("submit");
+			});
+			// $("input[type='submit']").trigger("click");
+			// $("input[type='submit']").triggerHandler("click");
+			/* $("a").click(function(){
+				alert("a");
+			}); */
+			/* $("a").trigger("click");
+			$("a").triggerHandler("click"); 
+			 // tips: 这两种方式都不会自动触发a标签的默认行为，除非你用<span></span>包裹一下内容才能自动触发进行默认行为
+			*/
+			$("span").click(function(){
+				alert("span");
+			});
+			//$("span").trigger("click");
+			$("span").triggerHandler("click");
+		});
+	</script>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<a href="http://www.baidu.com"><span>我是百度</span></a>
+	<form action="http://www.taobao.com">
+		<input type="text"/>
+		<input type="submit"/>
+	</form>
+</body>
+</html>

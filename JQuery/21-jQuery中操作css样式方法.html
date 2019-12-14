@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>21-jQuery中操作css样式方法</title>
+	<script src="../JScontent/js/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// css() 一个一个写 单个成行
+			$("div").css("width","100px");
+			$("div").css("height","100px");
+			$("div").css("background","red");
+			
+			// css() 串联而写
+			$("div").css("width","100px").css("height","200px").css("background","blue");
+			
+			// css() 中传的是对象，注意，对象的属性需要用引号括起来
+			$("div").css({
+				width:"100px",
+				height:"100px",
+				background:"pink"
+			});
+		});
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

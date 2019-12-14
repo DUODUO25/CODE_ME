@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery-prop方法</title>
+	<script src="../JScontent/js/jquery-3.4.1.js"></script>
+	<script>
+		$(function(){
+			$("span").eq(0).prop("demo","dog");
+			$("span").eq(1).prop("demo","dog1");
+			console.log($("span").prop("demo"));
+			
+			$("span").removeProp("demo");
+			console.log($("span").prop("class"));
+			$("span").prop("class","box");
+			console.log($("input").prop("checked")); // true flase
+			console.log($("input").attr("checked")); // checked undefined
+		});
+		/*tips: 还能操作属性节点*/
+	</script>
+</head>
+<body>
+<span class="span1" name="dd"></span>
+<span class="span2" name="cc"></span>
+<input type="checkbox">
+</body>
+</html>

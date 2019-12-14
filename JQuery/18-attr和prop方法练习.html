@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>18-attr和prop方法练习</title>
+	<script src="../JScontent/js/jquery-3.4.1.js"></script>
+	<script>
+		$(function(){
+			var btn = document.getElementsByTagName("button")[0];
+			var input = document.getElementsByTagName("input")[0];
+			
+			btn.onclick = function(){
+				var text = input.value;
+				$("img").attr("src",text);
+				//$("img").prop("src",text); 因为src的返回值不是true or false, 推荐使用attr方法
+			};
+			 
+		});
+	</script>
+</head>
+<body>
+	<input type="text"/>
+	<button>切换图片</button><br>
+	<img src="https://www.baidu.com/img/baidu_jgylogo3.gif">
+</body>
+</html>
