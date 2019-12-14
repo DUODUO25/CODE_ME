@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>24-jQuery事件绑定</title>
+	<script type="text/javascript" src="../JScontent/js/jquery-3.4.1.js"></script>
+	<script>
+		$(function(){
+			// tips: 可以添加多个不同事件，不会覆盖
+			
+			$("button").click(function(){
+				alert("hhh");
+			});
+			$("button").click(function(){
+				alert("qqq");		
+			});
+			$("button").on("click",function(){
+				alert("www");
+			});
+			$("button").mouseleave(function(){
+				alert("mouseleave");
+			});
+			$("button").mouseenter(function(){
+				alert("mouseenter");
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>我是按钮</button>
+	<button>我是按钮2</button>
+</body>
+</html>

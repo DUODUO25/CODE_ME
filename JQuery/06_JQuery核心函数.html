@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>06_JQuery核心函数</title>
+	<script src="../JScontent/js/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		//$();  
+		
+		//1.接收一个函数
+		$(function(){
+			alert("hello world");
+			//2. 接收一个字符串
+			//2.1 接收一个字符串选择器
+			// 返回一个jQuery对象，对象中保存了创建的DOM元素
+			var $box1 = $(".box1");
+			var $box2 = $("#box2");
+			console.log($box1);
+			console.log($box2);
+			//2.2接收一个字符串代码片段
+			var $p = $("<p>我是段落</p>");
+			console.log($p);
+			$box1.append($p);
+			//3.接收一个dom元素
+			//3.1 会被包装成一个jQuery对象
+			var span = document.getElementsByTagName('span')[0];
+			console.log(span);
+  			var $span = $(span);
+  			console.log($span);
+		});
+		
+		
+		
+	</script>
+</head>
+<body>
+	<div class="box1"></div>
+	<div id="box2">
+		<span>我是span</span>
+	</div>
+</body>
+</html>

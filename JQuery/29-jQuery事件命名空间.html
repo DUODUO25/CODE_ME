@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>29-jQuery事件命名空间</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.father{
+			width:200px;
+			height:200px;
+			background: red;
+		}
+		.son{
+			width:100px;
+			height:100px;
+			background:blue;
+		}
+	</style>
+	<script type="text/javascript" src="../JScontent/js/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/* tips:想要事件的命名空间有效，事件是通过我们的on来绑定的，通过trigger或者triggerHandler来触发事件 */
+			$(".son").on("click.zs",function(){
+				alert("click1");
+			});
+			$(".son").on("click.ls",function(){
+				alert("click2");
+			});
+			
+			// $(".son").trigger("click.zs");
+			$(".son").trigger("click.ls");
+		});
+	</script>
+</head>
+<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		<a href="http://www.baidu.com"><span>我是百度</span></a>
+		<form action="http://www.taobao.com">
+			<input type="text"/>
+			<input type="submit"/>
+		</form>
+</body>
+</html>

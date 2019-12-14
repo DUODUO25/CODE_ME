@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>34-电影排行榜上</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.box{
+		width:300px;
+		height:450px;
+		margin:50px auto;
+		border:1px solid #000;
+	}
+	.box>h1{
+		font-size:20px;
+		line-height:35px;
+		color:deeppink;
+		padding-left:10px;
+		border:1px dashed #ccc;
+	}
+	ul>li{
+		list-style:none;
+		padding:5px 10px;
+		border:1px dashed #ccc;
+	}
+	ul>li:nth-child(-n+3) span{
+		background:deeppink;
+	}
+	ul>li>span{
+		display:inline-block;
+		width:20px;
+		height:20px;
+		background:#ccc;
+		text-align:center;
+		line-height:20px;
+		margin-right:10px;
+	}
+	.content{
+		overflow:hidden;
+		display:none;
+	}
+	.content>img{
+		width:80px;
+		height:120px;
+		float:left;
+		margin-top:5px;
+	}
+	.content>p{
+		width:180px;
+		height:120px;
+		float:right;
+		font-size:12px;
+		line-height:20px;
+	}
+	.current .content{
+		display:block;
+	}
+</style>
+<script src="../JScontent/js/jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+		// 1. codes: 监听li的移入
+		/* $("li").mouseenter(function(){
+			$(this).addClass("current");
+		});
+		$("li").mouseleave(function(){
+			$(this).removeClass("current");
+		}); */
+		$("li").hover(function(){$(this).addClass("current");},function(){$(this).removeClass("current");})
+	});
+</script>
+</head>
+<body>
+	<div class="box">
+		<h1>电影排行榜</h1>
+		<ul>
+			<li><span>1</span>电影名称
+				<div class="content">
+					<img alt="" src="../images/zl.jpg">
+					<p>简介：痞性十足的冷锋（吴京饰）屡屡惹祸，有人说他是流氓，是痞子， 也有人说他是英雄，是传奇，在一次行动中冷锋违抗军令打死了恐怖分子，要被开除出队，却意外得到了神秘部队战狼的接纳，但本想换个地方继续惹祸的他却跳进了另外一个深渊，冷傲的战狼副队长，擦出暧昧火花的性感女队长（余男饰），心计颇深腹黑的毒枭，枉死的队友，雇佣兵跨过边境线入侵中国，一切都使他陷入了麻烦中。一切都在考验这个团队的毒瘤冷锋，他不知该何去何从。</p>
+				</div>
+			</li>
+			<li><span>2</span>电影名称
+				<div class="content">
+					<img alt="" src="../images/zl.jpg">
+					<p>简介：痞性十足的冷锋（吴京饰）屡屡惹祸，有人说他是流氓，是痞子， 也有人说他是英雄，是传奇，在一次行动中冷锋违抗军令打死了恐怖分子，要被开除出队，却意外得到了神秘部队战狼的接纳，但本想换个地方继续惹祸的他却跳进了另外一个深渊，冷傲的战狼副队长，擦出暧昧火花的性感女队长（余男饰），心计颇深腹黑的毒枭，枉死的队友，雇佣兵跨过边境线入侵中国，一切都使他陷入了麻烦中。一切都在考验这个团队的毒瘤冷锋，他不知该何去何从。</p>
+				</div>
+			</li>
+			<li><span>3</span>电影名称
+				<div class="content">
+					<img alt="" src="../images/zl.jpg">
+					<p>简介：痞性十足的冷锋（吴京饰）屡屡惹祸，有人说他是流氓，是痞子， 也有人说他是英雄，是传奇，在一次行动中冷锋违抗军令打死了恐怖分子，要被开除出队，却意外得到了神秘部队战狼的接纳，但本想换个地方继续惹祸的他却跳进了另外一个深渊，冷傲的战狼副队长，擦出暧昧火花的性感女队长（余男饰），心计颇深腹黑的毒枭，枉死的队友，雇佣兵跨过边境线入侵中国，一切都使他陷入了麻烦中。一切都在考验这个团队的毒瘤冷锋，他不知该何去何从。</p>
+				</div>
+			</li>
+			<li><span>4</span>电影名称</li>
+			<li><span>5</span>电影名称</li>
+			<li><span>6</span>电影名称</li>
+		</ul>
+	</div>
+</body>
+</html>
