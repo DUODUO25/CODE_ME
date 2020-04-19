@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>08-jQueryDOM操作相关方法</title>
+</head>
+<!-- <script src="../../JScontent/js/jquery-3.4.1.js"></script> -->
+<script src="njQuery-1.0.0.js"></script>
+<script>
+	$(function(){
+		var btn = document.getElementsByTagName("button")[0];
+		btn.onclick = function(){
+			var $div = $("div");
+			//console.log($div.html());
+			//$div.html('123');
+			//$div.html('<div><span>我是span</span></div>');
+			console.log($div.text());
+			//$div.text('123');
+			//$div.text('<div><span>我是span</span></div>');
+			//console.log($div.get(0).innerText);
+		};
+	});
+</script>
+<body>
+	<button>调用html</button>
+	<div>
+		我是div1
+		<p>我是段落1</p>
+	</div>
+	<div class="box">
+		我是div2
+		<p>我是段落2</p>
+	</div>
+</body>
+</html>

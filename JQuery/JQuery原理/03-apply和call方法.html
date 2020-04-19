@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-apply和call方法</title>
+<script>
+	/*
+	apply和call方法的作用：专门用于修改方法内部的this
+	格式：
+	call(对象，参数1，参数2，...);
+	apply(对象，[数组]);
+	*/
+	function test(){
+		console.log(this);
+	}
+	
+	/* 
+	1.通过window.test找到test方法
+	2.通过apply(obj)把找到的test方法内部的this修改为自定义的对象
+	3.将数组中的元素依次取出，传入形参
+	
+	*/
+	function sum(a,b){
+		console.log(this);
+		console.log(a+b);
+	}
+	//window.sum.call(obj,1,2);
+	//window.sum.apply(obj,[1,2]);
+	var arr = [1,3,5,7,9];
+	var obj = {}; 
+	/* 
+	1.通过[].push找到数组中的push方法
+	2.通过apply(obj)把找到的test方法内部的this修改为自定义的对象
+	3.将数组中的元素依次取出，传入形参
+	将真数组转化成伪数组
+	*/
+	[].push.apply(obj,arr);
+	//console.log(obj);
+	window.onload = function(){
+		//tips:系统自带的伪数组
+		var res = document.querySelectorAll("div");
+		//tips:自定义的伪数组
+		var obj ={0:"lnj",1:"33",length:2};
+		var arr = [].slice.call(obj); //tips:真数组
+		console.log(arr);
+		//[].push.apply(arr,res);
+		//console.log(arr);
+		//[].push.apply(arr,obj);
+		//console.log(arr);
+		//console.log(arr instanceof Array);
+		//var arr2 = [1,3,5,7,9];
+		//tips:如果slice()方法什么参数都没有传递，会将数组中的元素放到一个新的数组中原样返回
+		//var res2 = arr2.slice();
+		//console.log(res2);
+	}
+</script>
+</head>
+<body>
+	<div>我是div</div>
+	<div>我是div</div>
+	<div>我是div</div>
+</body>
+</html>

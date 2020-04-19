@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05-jQuery监听DOM加载</title>
+<script src="njQuery-1.0.0.js"></script>
+<script>
+/* onload事件会等到DOM元素加载完毕，并且等到资源也加载完毕，才会执行函数  */
+	/*  window.onload = function(){
+		var res = document.querySelectorAll("div");
+		console.log(res);
+	};  */
+	/*   DOMContentLoaded事件只会等待所有的DOM元素加载完毕，就执行函数 */
+	/* if(document.addEventListener){
+		document.addEventListener("DOMContentLoaded",function(){
+			var res = document.querySelectorAll("div");
+			console.log(res);
+		});
+	}else if(document.attachEvent){
+		document.attachEvent("onreadystatechange",function(){
+			if(document.readyState === "complete"){
+				//console.log("cool IE");
+				var res = document.querySelectorAll("div");
+				console.log(res);
+			}
+		});
+	}   */
+	/* 
+		document.readyState:
+			该属性返回以下值:
+			    uninitialized - 还未开始载入
+			    loading - 载入中
+			    interactive - 已加载，文档与用户可以开始交互
+			    complete - 载入完成
+			    
+		onreadystatechange事件专门用来监听document.readyState属性改变的
+	*/
+ /* 	document.onreadystatechange = function(){
+		if(document.readyState === "complete"){
+			//console.log("readyState is complete");
+			document.attachEvent(function(){
+				console.log("cool IE");
+			});
+		}
+	}; */
+	
+	//addEventListener只支持高级浏览器，不支持低级浏览器
+	
+	$(function(){
+		var res = document.querySelectorAll("div");
+		console.log(res);
+	});
+	
+	
+</script>
+</head>
+<body>
+	<div class="sss"></div>
+	<div></div>
+	<div></div>
+</body>
+<script>
+	
+</script>
+</html>

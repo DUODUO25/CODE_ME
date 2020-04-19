@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02-jQuery入口函数测试</title>
+<!-- <script type="text/javascript" src="../../JScontent/js/jquery-3.4.1.js"></script>  -->
+<script type="text/javascript" src="njQuery-1.0.0.js"></script>
+<script>
+
+		window.onload = function(){
+			//tips:1.传入' ' null undefined NaN 0 false
+			//conclusion:会返回一个空的jQuery对象给我们
+			console.log($());
+			console.log($(''));
+			console.log($(null));
+			console.log($(undefined));
+			console.log($(NaN));
+			console.log($(0));
+			console.log($(false));
+			//tips:2.传入function
+			var test = function(){
+				console.log("hhh");
+			};
+			$(test);
+			$(function(){});
+			//tips:2.传入html片段
+			//conclusion:会将创建好的dom元素存储到jQuery对象中返回
+			console.log($('<p>1</p><p>2</p><p>3</p>'));
+			console.log($(' <div><p>1</p></div><div><p>2</p></div>  ')); 
+			//tips:3.传入选择器
+			//conclusion:会找到的所有元素存储到jQuery对象中返回
+			console.log($("li"));
+			//tips:4.传入数组
+			//conclusion:会将数组中存储的元素依次存储到jQuery对象中返回
+		    var arr = ['a',2,3,4,5 ];
+			console.log($(arr)); 
+			//tips:5.传入伪数组
+			//conclusion:会将对象存储到jQuery对象中返回
+		    var likeArr = {'0':"lnj",'1':"age",'2':"33",'length':3};
+			console.log($(likeArr));  
+			/* console.log(typeof arr);
+			console.log(typeof likeArr);
+			console.log(arr instanceof Array);
+			console.log(likeArr instanceof Array);
+			console.log(arr.toString());
+			console.log(likeArr.toString());
+			console.log(({}).toString.apply(arr)); */
+			//tips:6.传入对象
+			//conclusion:会将传入的对象存储到jQuery对象中返回
+			function Person(){
+			}
+			console.log($(new Person())); 
+			//tips:7.传入DOM元素(DOM元素也是对象)
+			//conclusion:会将传入的对象存储到jQuery对象中返回
+			console.log($(document.createElement("div")));
+			
+			//tips:8.传入基本数据类型
+			//conclusion:会将传入的基本数据类型存储到jQuery对象中返回
+			console.log($(true));
+			console.log($(1)); 
+			
+			/* 1.传入' ' null undefined NaN 0 false
+				会返回一个空的jQuery对象给我们
+			   2.字符串
+			         -代码片段：会将创建好的dom元素存储到jQuery对象中返回
+			         -选择器：会把找到的所有元素存储到jQuery对象中返回
+			   3.数组（真）
+			        会将数组中存储的元素依次存储到jQuery对象中返回
+			   4.除上述类型以外的
+			        会将传入的数据存储到jQuery对象中返回
+			*/
+		}
+		
+</script>
+</head>
+<body>
+	<ul>
+	 	<li class='item'>ul中的li1</li>
+	 	<li>ul中的li2</li>
+	 	<li>ul中的li3</li>
+	</ul>
+</body>
+</html>

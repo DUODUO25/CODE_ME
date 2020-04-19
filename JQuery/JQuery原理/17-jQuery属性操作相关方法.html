@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>17-jQuery属性操作相关方法</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.box1{
+		width:100px;
+		height:100px;
+		background:red;
+		margin-bottom:10px;
+	}
+	.box2{
+		width:200px;
+		height:200px;
+		background:blue;
+		margin-bottom:10px;
+	}
+</style>
+<!-- <script src="../../JScontent/js/jquery-3.4.1.js"></script> -->
+<script src="njQuery-1.0.0.js"></script>
+<script>
+	$(function(){
+		console.log($("div").css("height"));
+		//console.log($("div").css("height","50px"));
+		/* $("div").css({
+			height:"50px",
+			backgroundColor:"pink"
+		}); */
+		//1. tips:如何利用原生的js获取样式
+		//var div = document.getElementsByTagName("div")[0];
+		//console.log(window.getComputedStyle(div)["height"]);
+		//console.log(div.currentStyle["height"]);
+		//div.style["height"] = "200px";
+	});
+</script>
+</head>
+<body>
+	<div class="box1">div1</div>
+	<div class="box2">div2</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>23-jQuery事件操作相关方法</title>
+<!-- <script src="../../JScontent/js/jquery-3.4.1.js"></script> -->
+<script src="njQuery-1.0.0.js"></script> 
+<script>
+	$(function(){
+		/*  $("button").on('click',function(){
+			alert("hello ck!");
+		}); 
+		$("button").on('click',function(){
+			alert("hello ck11!");
+		}); */
+		/* $("button").on('mouseenter',function(){
+			alert("hello mouseenter!");
+		}); */
+		/* $("button").on('mouseleave',function(){
+			alert("hello mouseleave!");
+		});  */
+		var btn = document.querySelector('button');
+		/* btn.addEventListener('click',function(){
+			alert('click1');
+		}); */
+		
+	/* 	function addEvent(dom,name,callBack){
+			if(!dom.eventCache){
+				dom.eventCache = {};
+			}
+			if(!dom.eventCache[name]){
+				dom.eventCache[name] = [];
+				dom.eventCache[name].push(callBack);
+				if(dom.addEventListener){
+						dom.addEventListener(name,function(){
+						for(var i=0;i<dom.eventCache[name].length;i++){
+							dom.eventCache[name][i]();
+						}	
+					});	
+				}else{
+					dom.attachEvent('on'+name,function(){
+						for(var i=0;i<dom.eventCache[name].length;i++){	
+							dom.eventCache[name][i]();
+						}
+					});
+				}
+			}else{
+				dom.eventCache[name].push(callBack);
+			}
+		} */
+		
+		function test1(){
+			alert('click1');
+		}
+		function test2(){
+			alert('click11');
+		}
+		function test3(){
+			alert('mouseenter');
+		}
+		function test4(){
+			alert('mouseleave');
+		}
+		//btn.eventCache = [test1,tes2]
+		/* addEvent(btn,'click',test1);
+		addEvent(btn,'click',test2);
+		addEvent(btn,'mouseenter',test3);
+		addEvent(btn,'mouseleave',test4); */
+		/* addEvent(btn,'click',function(){
+			alert('click1');
+		});  */
+		$(btn).on('click',test1);
+		$(btn).on('click',test2);
+		$(btn).on('mouseenter',test3);
+		$(btn).on('mouseleave',test4);
+		
+	});
+</script>
+</head>
+<body>
+	<button>我是button1</button>
+	<button>我是button2</button>
+</body>
+</html>

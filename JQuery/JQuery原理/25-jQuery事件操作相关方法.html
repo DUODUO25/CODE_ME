@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>25-jQuery事件操作相关方法</title>
+<!-- <script src="../../JScontent/js/jquery-3.4.1.js"></script> -->
+<script src="njQuery-1.0.0.js"></script>
+<script>
+	$(function(){
+		$("button").eq(0).on('click',function(){
+			//tips:浅复制一个元素
+			var $li = $('li').clone(false);
+			//tips:将复制的元素添加到ul中
+			$('ul').append($li);
+		});
+		$("button").eq(1).on('click',function(){
+			//$('li').clone(true).appendTo('ul');
+			var $li = $('li').clone(true);
+			$('ul').append($li);
+		});
+		$("li").on("click",function(){
+			alert($(this).html());
+		});
+	});
+</script>
+</head>
+<body>
+	<button>浅复制节点</button>
+	<button>深复制节点</button>
+	<ul>
+		<li>我是第一个li</li>
+		<li>我是第二个li</li>
+	</ul>
+</body>
+</html>

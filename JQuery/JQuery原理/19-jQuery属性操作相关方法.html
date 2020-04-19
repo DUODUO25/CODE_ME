@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>19-jQuery属性操作相关方法</title>
+<!-- <script src="../../JScontent/js/jquery-3.4.1.js"></script> -->
+<script src="njQuery-1.0.0.js"></script> 
+<script>
+	$(function(){
+		//console.log($("div").hasClass('cc'));
+		//console.log($("div").hasClass("ccd"));
+		console.log($("div").hasClass());
+		//var div = document.querySelector("div");
+		//console.log(div.getAttribute("class"));
+		//tips: 1. 获取元素中的class保存的值
+		//var className = " "+div.className+" ";
+		//tips: 2.通过indexOf判断是否包含指定的字符串
+		//console.log(className.indexOf("acc") != -1);
+		//console.log(className.indexOf(" "+"dd"+" "));
+	});
+</script>
+</head>
+<body>
+	<div class='bb aabb cc dd'></div>
+	<div class='aabb'></div> 
+</body>
+</html>

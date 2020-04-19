@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>13-jQueryDOM操作相关方法</title>
+	<!-- <script src="../../JScontent/js/jquery-3.4.1.js"></script>  -->
+	<script src="njQuery-1.0.0.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//function insertBefore(source,target){
+				/*javascript原生方法insertBefore:
+				调用者.insertBefore(插入的元素,参考的元素)
+				insertBefore方法，调用者是谁，就会将元素插入到谁的内部
+				*/
+				// 1. 拿到指定元素的父元素
+				//var parent = target.parentNode;
+				// 2.利用指定元素的父元素来调用insertBefore
+				//parent.insertBefore(source,target);
+			//} 
+			var btn = document.getElementsByTagName("button")[0];
+			btn.onclick = function(){
+				$('p').insertBefore('.item');
+			};	
+		});
+		
+	</script>
+</head>
+<body>
+	<button>调用insertBefore</button>
+	<div class="item">
+		<p>我是段落</p>
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+	</div>
+	<div class="item">
+		<p>我是段落</p>
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+	</div>
+</body>
+</html>

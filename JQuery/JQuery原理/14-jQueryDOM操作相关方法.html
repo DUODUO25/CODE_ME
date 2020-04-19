@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>14-jQueryDOM操作相关方法</title>
+	<!-- <script src="../../JScontent/js/jquery-3.4.1.js"></script> --> 
+	<script src="njQuery-1.0.0.js"></script>
+	<script type="text/javascript">
+		/* $(function(){
+			function replaceAll(source, target){
+				//1.将元素插到指定元素的前面
+				$(source).insertBefore(target);
+				//2.将指定元素删除
+				$(target).remove();
+			}
+			var p = document.querySelector("p");
+			var li = document.querySelector("li");
+			replaceAll(p,li);
+		}); */
+		$(function(){
+			var btn = document.getElementsByTagName("button")[0];
+			btn.onclick = function (){
+				$("p").replaceAll("li");
+			};
+		});
+	</script>
+</head>
+<body>
+	<button>调用replaceAll</button>
+	<p>我是段落</p>
+	<div class="item">
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+	</div>
+	<p>我是段落</p>
+	<div class="item">
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+	</div>
+</body>
+</html>

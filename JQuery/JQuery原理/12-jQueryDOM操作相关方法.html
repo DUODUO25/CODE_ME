@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>12-jQueryDOM操作相关方法</title>
+<!-- <script src="../../JScontent/js/jquery-3.4.1.js"></script> --> 
+	<script src="njQuery-1.0.0.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var btn = document.getElementsByTagName("button")[0];
+			btn.onclick = function(){
+				/* var res = $('.item').append('p');
+				console.log(res); */
+				$("div").prepend('p'); 
+			};	
+		});
+	</script>
+</head>
+<body>
+	<button>调用prepend</button>
+	<p>我是段落</p>
+	<p>我是段落</p>
+	<div class="item">
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+	</div>
+	<div class="item">
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+	</div>
+</body>
+</html>

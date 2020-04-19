@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>07-jQueryDOM操作方法</title>
+	<!-- <script type="text/javascript" src="../../JScontent/js/jquery-3.4.1.js"></script> -->
+	<script src="njQuery-1.0.0.js"></script>
+	<script>
+		/* window.onload = function(){
+			var btn = document.getElementsByTagName("button")[0];
+			var btn1 = document.getElementsByTagName("button")[1];
+			btn.onclick = function(){
+				var res = $("div").empty();
+				console.log(res);
+			};
+			btn1.onclick = function(){
+				var res = $("div").remove();
+				console.log(res);
+			};
+		}; */
+		$(function(){
+			var btn = document.getElementsByTagName("button")[0];
+			//var btn = document.querySelectorAll("button")[0];
+			var btn1 = document.getElementsByTagName("button")[1];
+			btn.onclick = function(){
+				//$("div").each();
+				var res = $("div").empty();
+				console.log(res);
+			};
+			btn1.onclick = function(){
+				$("div").remove();
+			};
+		});
+	</script>
+</head>
+<body>
+	<button>调用empty</button>
+	<button>调用remove</button>
+	<div>
+		我是div
+		<p>我是段落</p>
+	</div>
+	<div class="box">
+		我是div
+		<p>我是段落</p>
+	</div>
+	<p class="box">段落</p>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>09-jQueryDOM操作相关方法</title>
+<!-- 	<script src="../../JScontent/js/jquery-3.4.1.js"></script>  -->
+	<script src="njQuery-1.0.0.js"> </script>
+	<script>
+		 $(function(){
+			var btn = document.getElementsByTagName("button")[0];
+			btn.onclick = function(){
+				var res = $("p").appendTo(".item");
+				console.log(res);
+			};
+		}); 
+	  /*  $(function(){
+	    	function appendTo(source,target){
+	    		//target.appendChild(source);
+	    		//1.方法一ppp遍历所有的  	
+	    		for(var j=0;j<source.length;j++){
+	    			for(var i=0;i<target.length;i++){
+	    	    		if(i===0){
+	    	    			target[i].appendChild(source[j]);
+	    	    		}else{
+	    	    			var sourceEle = source[j].cloneNode(true);
+	    	    			target[i].appendChild(sourceEle);
+	    	    		} 
+	    	    	}
+	    		} 
+	    		//2.方法二
+	    		for (var i=0;i<target.length;i++){
+	    			for(var j=0;j<source.length;j++){
+	    				if(i===0){
+	    					target[i].appendChild(source[j]);
+	    				}
+	        			else{
+	        				var sourceEle = source[j].cloneNode(true);
+	            			target[i].appendChild(sourceEle);
+	        			}	
+	    			}
+	    		}
+				
+	    	}
+	    	//console.log($($("div")));
+	    	//console.log($("div"));
+	    	var ps = document.querySelectorAll("p");
+	    	var divs = document.querySelectorAll("div");
+	    	//console.log($(divs));
+	    	console.log($(".item"));
+	    	//appendTo(ps,divs);
+	    });  */
+		
+	</script>
+</head>
+
+<body>
+	<button>调用appendTo</button>
+	<p>我是段落</p>
+	<p>我是段落</p>
+	<div class="item">
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+	</div>
+	<div class="item">
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+	</div>
+</body>
+</html>
