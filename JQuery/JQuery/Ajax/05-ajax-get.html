@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>05-ajax-get</title>
+	<script>
+		window.onload = function(ev){
+			
+			var oBtn = document.querySelector("button");
+			oBtn.onclick = function(ev1){
+				var xhr;
+				if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+					xhr=new XMLHttpRequest();
+				}
+				else{// code for IE6, IE5
+					xhr=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				/* tips: 在IE  console.log(Math.random());
+			console.log(new Date().getTime());*/
+				xhr.open("GET","05-ajax-get.txt?t="+(new Date().getTime()),true);
+				xhr.send();
+				xhr.onreadystatechange = function (ev2){
+					if(xhr.readyState === 4){
+						if(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){
+							alert(xhr.responseText);
+						}else{
+							alert("error");
+						}
+					}
+				};
+		  };
+				
+	 };
+	</script>
+</head>
+<body>
+	<button>发送请求</button>
+</body>
+</html>

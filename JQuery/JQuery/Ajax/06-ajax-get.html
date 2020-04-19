@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>06-ajax-get</title>
+	<script src="myAjax.js"></script>
+	<script>
+		window.onload = function(ev){
+			var oBtn = document.querySelector("button");
+			oBtn.onclick = function(ev1){
+				//%E5%BC%A0%E4%B8%89
+				ajax("04-ajax-get.php",{
+					"userName":"李南江",
+					"密码":"123456"
+				},3000
+				,function(xhr){
+					alert(xhr.responseText);
+				},function(xhr){
+					alert("请求失败");
+				});
+		    };		
+	   };
+	</script>
+</head>
+<body>
+	<button>发送请求</button>
+</body>
+</html>

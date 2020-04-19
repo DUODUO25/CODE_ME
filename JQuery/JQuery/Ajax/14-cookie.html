@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>15-cookie-test</title>
+<script type="text/javascript">
+	window.onload = function(ev){
+		/* 
+		notes:cookie - 客户端会话跟踪技术  session - 服务端会话跟踪技术
+		cookie作用： 将网页中的数据保存到浏览器中
+		cookie生命周期： 默认生命周期是一次会话（浏览器被关闭，就代表一次会话结束）; 如果通过expires=设置了过期时间，并且过期时间没有过期，下次打开浏览器还是存在，如果已经过期了，会立即删除保存的数据
+		cookie注意点：cookie默认不会保存任何数据
+		cookie不能一次性设置多条数据，只能一条一条的设置
+		cookie个数限制：20~50
+		大小限制：4kb左右
+		cookie作用范围：同一浏览器的同一个路径下访问
+		*/
+		//alert(document.cookie);
+	 /* 	var date = new Date();
+		date.setDate(date.getDate()-1);
+		document.cookie = "age=33;expires="+date.toGMTString()+";";
+		alert(document.cookie);  */
+		document.cookie = "name=lnj;path=/;domain=127.0.0.1;";
+		document.cookie ="age=33;";
+		alert(document.cookie);
+	};
+</script>
+</head>
+<body>	
+
+</body>
+</html>

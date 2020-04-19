@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>04-ajax-get</title>
+	<!--  tips:AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下。-->
+	<script>
+		window.onload = function(ev){
+			var oBtn = document.querySelector("button");
+			oBtn.onclick = function(ev1){
+				// 1. tips:创建一个异步对象
+				 var xmlhttp=new XMLHttpRequest();
+				// 2. tips:设置请求方式和请求地址
+				
+						 /*open()的三个参数 method：请求的类型；GET 或 POST
+						    url：文件在服务器上的位置
+						    async：true（异步）或 false（同步） */
+
+				 xmlhttp.open("GET","04-ajax-get2.php",true);
+				// 3. tips:发送请求
+				 xmlhttp.send();
+				// 4. tips:监听状态的变化
+				 xmlhttp.onreadystatechange = function(ev2){
+					if(xmlhttp.readyState === 4){
+						//tips:判断是否请求成功
+						if(xmlhttp.status >= 200 && xmlhttp.status <= 300 || xmlhttp.status === 304){
+							// 5. tips:处理返回的结果
+							console.log("接收到服务器返回的数据");
+						}else{
+							console.log("没有接收到服务器返回的数据");
+						}
+						
+					}
+					
+				};
+				
+			};
+		}
+	</script>
+</head>
+<body>
+	<button>发送请求</button>
+</body>
+</html>

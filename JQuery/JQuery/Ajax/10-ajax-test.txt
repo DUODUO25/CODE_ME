@@ -1,0 +1,17 @@
+{
+	"nz":{
+		"title":"甜美|女装",
+		"des":"人见人爱，花见花开，甜美系列",
+		"image":"images/1.jpg"
+	},
+	"bb":{
+		"title":"奢华LV包",
+		"des":"送系列",
+		"image":"images/2.jpg"
+	},
+	"tx":{
+		"title":"键盘拖鞋",
+		"des":"程序系列",
+		"image":"images/3.jpg"
+	}
+}

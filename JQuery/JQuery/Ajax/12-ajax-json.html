@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>12-ajax-json</title>
+	<!-- <script src="../57-QQ/js/jquery-3.4.1.js"></script> -->
+	<script src="json2.js"></script>
+	<script src="myAjax2.js"></script>
+	<script>
+		window.onload = function(ev){
+			
+			var oBtn = document.querySelector("button");
+			oBtn.onclick = function(ev1){
+				ajax({
+					type:"get",
+					data:{},
+					url:"12-ajax-json.php",
+					success:function(xhr){
+						//console.log(xhr.responseText);
+						var str = xhr.responseText;
+						var obj = JSON.parse(str); //tips:在低版本的IE中，可以使用json2.js进行兼容
+						//console.log(obj);
+						console.log(obj.name);
+						console.log(obj.age);
+					},
+					error:function(xhr){
+						console.log(xhr.status);
+					}
+				});
+		  	};
+				
+	 };
+	</script>
+</head>
+<body>
+	<button>发送请求</button>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/2002/xmlspec/dtd/2.10/xmlspec.dtd">
+<products>
+	<nz>
+		<title>甜美女装</title>
+		<des>人见人爱，花见花开，甜美系列</des>
+		<image>images/1.jpg</image>
+	</nz>
+	<bb>
+		<title>奢华LV包</title>
+		<des>送系列</des>
+		<image>images/2.jpg</image>
+	</bb>
+	<tx>
+		<title>键盘拖鞋</title>
+		<des>程序系列</des>
+		<image>images/3.jpg</image>
+	</tx>
+</products>

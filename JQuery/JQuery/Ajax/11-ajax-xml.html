@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>11-ajax-xml</title>
+	<!-- <script src="../57-QQ/js/jquery-3.4.1.js"></script> -->
+	<script src="myAjax2.js"></script>
+	<script>
+		window.onload = function(ev){
+			
+			var oBtn = document.querySelector("button");
+			oBtn.onclick = function(ev1){
+				ajax({
+					type:"get",
+					data:{},
+					url:"11-ajax-xml.php",
+					success:function(xhr){
+						console.log(xhr.responseXML);
+						console.log(document); 
+						
+					},
+					error:function(xhr){
+						console.log(xhr.status);
+					}
+				});
+		  	};
+				
+	 };
+	</script>
+</head>
+<body>
+	<button>发送请求</button>
+</body>
+</html>
