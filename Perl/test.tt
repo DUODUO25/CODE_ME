@@ -1,0 +1,24 @@
+<u2>Board: [% board %]</u2>
+<table border="1">
+    <tr><th>Ticket</th><th>Title</th><th>Storypoints</th><th>Time estimated</th><th>Time spent</th><th>in Progress</th><th>in Review</th><th>in Pending</th><th>in release ready</th><th>Components</th></tr>
+
+[% FOREACH ticket in tickets %]
+    <tr>
+        <td><a href="[% ticket.link %]">[% ticket.name %]</a></td>
+        <td>[% ticket.title %]</td>
+        <td>[% ticket.story_points %]</td>
+        <td>[% ticket.time_estimated %]</td>
+        <td>[% ticket.time_spent %]</td>
+        <td>[% ticket.in_progress %]</td>
+        <td>[% ticket.in_review %]</td>
+        <td>[% ticket.in_pending %]</td>
+        <td>[% ticket.in_release_ready %]</td>
+        <td>
+            [% FOREACH component in ticket.components %]
+                [% component %]
+            [% END %]
+        </td>
+    </tr>
+
+[% END %]
+</table>

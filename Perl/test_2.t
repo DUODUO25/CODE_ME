@@ -12,7 +12,7 @@ sub test {
     die 'Error!';
 }
 
-throws_ok{test()}qr/Errors/,'Error';
+throws_ok{test()}qr/Error/,'Error';
 dies_ok { div( 1, 0 ) } 'divide by zero detected';
  
 # or if you don't like prototypes

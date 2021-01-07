@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+      function toggle_button(ID, SELECTOR) {
+        var $button = SELECTOR ? $(SELECTOR) : $("#" + ID);
+ 
+        $button.attr("disabled", !$button.attr("disabled"));
+        $button.toggleClass("disabled");
+      }
+ 
+      function enable_button(ID, SELECTOR) {
+        var $button = SELECTOR ? $(SELECTOR) : $("#" + ID);
+ 
+        $button.removeClass("disabled");
+        $button.attr("disabled", false);
+      }
+ 
+      function disable_button(ID, SELECTOR) {
+        var $button = SELECTOR ? $(SELECTOR) : $("#" + ID);
+ 
+        $button.addClass("disabled");
+        $button.attr("disabled", true);
+      }
+      window.onload = function () {
+        let oDisabledBtn = document.querySelector("#disable");
+        let oEnableBtn = document.querySelector("#enable");
+        let oToggleBtn = document.querySelector("#toggle");
+ 
+        oDisabledBtn.onclick = function () {
+          disable_button("disable_enable");
+        };
+ 
+        oEnableBtn.onclick = function () {
+          enable_button("disable_enable");
+        };
+ 
+        oToggleBtn.onclick = function () {
+          toggle_button("disable_enable");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <input type="button" value="disabled button" id="disable" />
+    <input type="button" value="enable button" id="enable" />
+    <input type="button" value="toggle button" id="toggle" />
+    <div>
+      <p>displaying button</p>
+      <input type="button" value="disable/enable" id="disable_enable" />
+    </div>
+  </body>
+</html>

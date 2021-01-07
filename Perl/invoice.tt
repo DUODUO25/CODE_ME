@@ -1,0 +1,14 @@
+INVOICE [% invoice.id | format('%05d') %]
+
+Date: [% invoice.invdate %]
+
+To: [% invoice.client.name %]
+
+[% FOREACH addr_line = invoice.client.address.split('\n') -%]
+[% addr_line %]
+[% END -%]
+
+[% FOREACH line = invoice.lines.sort('line_no') -%]
+[% line.description | format('%-40s') %] £[% line.price | format('%.2f') %]
+[% END %]
+[% 'Total:' | format('%40s') %] £[% total | format('%.2f') %]
