@@ -22,8 +22,15 @@ GetOptions(
     'debug|d' => \$debug,
 ) or die "Usage: $0 --debug  --from NAME\n";
  
-say $debug ? 'debug' : 'no debug';
+say $debug ? $debug : 'no debug';
 if ($source_address) {
     say $source_address;
 }
 print Dumper \@ARGV;
+
+# my $hr_options = {verbose => 0};
+# say \$hr_options->{verbose};
+# GetOptions(
+#     'v|verbose+' => \$hr_options->{verbose},
+#     'h|help'     => sub {pod2usage('-verbose' => 2, '-exit' => 0)},
+# ) or pod2usage;
