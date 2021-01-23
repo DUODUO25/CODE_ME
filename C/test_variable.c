@@ -7,5 +7,5 @@ int main() {
     // 注意点:在C语言中, 想要使用变量,必须先给变量初始化
     num = 666;
     printf("num = %i\n",num);
-    return 1;
+    return 0;
 }
