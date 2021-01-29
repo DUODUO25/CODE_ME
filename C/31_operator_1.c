@@ -14,7 +14,8 @@ int main()
     // result = 10.0 % 3;
     // result = 2 % 3;
     // result = 0 % -1;
-    result = -2 % 3;
+    // result = -2 % 3;
+    result = 2 % -3;
     printf("result = %i\n",result);
 
     return 0;
